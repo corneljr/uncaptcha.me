@@ -1,0 +1,7 @@
+<%= form_for @user do |f| %>
+
+	<%= f.text_field :email, placeholder: 'email' %>
+	<%= f.text_field :password, placeholder: 'password' %>
+	<%= f.submit 'Uncaptcha Me' %>
+
+	<% end %>

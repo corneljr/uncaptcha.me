@@ -1,3 +1,118 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*Place all the styles related to the pages controller here.
+  They will automatically be included in application.css.
+	You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+/* Start of homepage styling */
+
+$active_blue: #40a6ff;
+$active_green: #80ff40; 
+$active_yellow: #ffec40; 
+$active_red: #ff5040; 
+$active_purple: #af40ff;
+$font-color: #f5f5f5;
+$font-stack: Helvetica, sans-serif; 
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+  background-position: top center;
+  background-color: #FFF;
+  color: white;
+}
+
+body {
+  width: 100%;
+  background-color: #FFF;
+}
+
+.container {
+	width: 100%;
+	padding: 6rem;
+}
+
+#div1 {
+	background-color: $active_blue;
+	font-family: $font-stack;
+
+	h1 {
+	font-size: 30px;
+	padding-top: 5px;
+	white-space: nowrap;
+	text-align: center;
+	}
+
+}
+
+#div2 {
+	background-color: $active_green;
+
+	img {
+		border-radius: 10px;
+		box-shadow: 1px 1px 10px 2px #000;
+		height: 100px;
+		width: 300px;
+		margin: auto;
+		display: block;
+		}
+
+}
+
+#div3 {
+	background-color: $active_red;
+	font-family: $font-stack;
+
+	h1 {
+		font-size: 30px;
+		padding-top: 5px;
+		white-space: nowrap;
+		text-align: center;
+	}
+}
+
+#div4 {
+	background-color: $active_purple;
+	font-family: $font-stack;
+
+	h1 {
+		font-size: 30px;
+		padding-top: 5px;
+		white-space: nowrap;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	input[type="password"], input[type="email"] {
+		margin-bottom: 20px;
+	}
+
+	input[type="submit"] {
+		background-color: lighten($active_purple, 10);
+		transition: 2s
+	}
+
+	input[type="submit"]:hover {
+		background-color: #fff;
+	}
+
+}
+
+input {
+	border: none;
+	display: block;
+	margin: auto;
+	padding: 0.6rem 1rem;
+	border-radius: 0.25rem;
+	text-align: center;
+	& + & {
+		margin-top: 1.5rem;
+	}
+	&:focus {
+		outline: none;
+	}
+}
