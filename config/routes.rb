@@ -1,7 +1,7 @@
 Twiggler::Application.routes.draw do
 
   resources :users
-  root 'pages#home'
+  root 'users#index'
 
   post '/captcha.js', to: 'captchas#js'
   get '/captcha/get', to: 'captchas#get'

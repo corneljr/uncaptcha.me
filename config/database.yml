@@ -40,7 +40,7 @@
 development:
   adapter: postgresql
   encoding: utf8
-  database: twiggler_development
+  database: uncaptcha_development
   pool: 5
   username: 
   password:
@@ -48,7 +48,7 @@ development:
 test: &TEST
   adapter: postgresql
   encoding: utf8
-  database: twiggler_test
+  database: uncaptcha_test
   pool: 5
   username: 
   password:
@@ -56,7 +56,7 @@ test: &TEST
 production:
   adapter: postgresql
   encoding: utf8
-  database: twiggler_production
+  database: uncaptcha_production
   pool: 5
   username: 
   password:

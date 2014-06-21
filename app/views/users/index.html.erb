@@ -14,10 +14,12 @@
 <div id="div4" class="container">
 	<h1>Signup to make your sites suck less.</h1>
 
-	<form action="#" id="signup" class="pure-form">
-		<input type="email" action="#" method="POST" id="email" placeholder="Email">
-		<input type="password" action="#" method="POST" id="password" placeholder="Password">
-		<input type="submit" value="Uncaptcha Me">
-	</form>
+	<%= form_for @user do |f| %>
+
+	<%= f.text_field :email, placeholder: 'email' %>
+	<%= f.text_field :password, placeholder: 'password' %>
+	<%= f.submit 'Uncaptcha Me' %>
+
+	<% end %>
 
 </div>
