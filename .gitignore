@@ -18,3 +18,4 @@
 database.yml
 
 .DS_Store
+public/assets/**
