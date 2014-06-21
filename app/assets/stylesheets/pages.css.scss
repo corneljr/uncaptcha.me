@@ -1,3 +1,107 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*Place all the styles related to the pages controller here.
+  They will automatically be included in application.css.
+	You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+/* Start of homepage styling */
+
+$inactive_blue: #99cfff;
+$inactive_green: #bbff99; 
+$inactive_yellow: #fff599; 
+$inactive_red: #ffa299; 
+$inactive_purple: #d599ff;
+$font-color: #f5f5f5;
+$font-stack: Helvetica, sans-serif; 
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+  background-position: top center;
+  background-color: #FFF;
+  color: white;
+}
+
+body {
+  width: 100%;
+  background-color: #FFF;
+}
+
+.container {
+	width: 100%;
+	padding: 6rem;
+}
+
+#div1 {
+	background-color: $inactive_blue;
+	font-family: $font-stack;
+
+	h1 {
+	font-size: 30px;
+	padding-top: 5px;
+	white-space: nowrap;
+	text-align: center;
+	color: darken($inactive_blue, 20)
+	}
+
+}
+
+#div2 {
+	background-color: $inactive_green;
+
+	img {
+		border-radius: 10px;
+		box-shadow: 1px 1px 10px 2px #000;
+		height: 100px;
+		width: 250px;
+		margin: auto;
+		display: block;
+		}
+
+}
+
+#div3 {
+	background-color: $inactive_yellow;
+	font-family: $font-stack;
+
+	h1 {
+	font-size: 30px;
+	padding-top: 5px;
+	white-space: nowrap;
+	text-align: center;
+	color: darken($inactive_yellow, 45);
+	}
+}
+
+#div4 {
+	background-color: $inactive_red;
+	font-family: $font-stack;
+
+	h1 {
+		font-size: 30px;
+		padding-top: 5px;
+		white-space: nowrap;
+		text-align: center;
+		color: darken($inactive_red, 45);
+	}
+}
+
+#div5 {
+	background-color: $inactive_purple;
+	font-family: $font-stack;
+
+	h1 {
+		font-size: 30px;
+		padding-top: 5px;
+		white-space: nowrap;
+		text-align: center;
+		color: darken($inactive_purple, 45);
+	}
+
+	input {
+		display: block;
+	}
+
+
+
+}
