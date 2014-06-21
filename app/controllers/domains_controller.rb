@@ -17,4 +17,5 @@ class DomainsController < ApplicationController
 
 	def domain_params
 		params.require(:domain).permit(:url, :user_id)
+	end
 end
