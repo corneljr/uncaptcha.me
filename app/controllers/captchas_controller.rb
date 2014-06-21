@@ -3,7 +3,7 @@
 class CaptchasController < ApplicationController
 	before_filter :authenticate
 
-	def js_request
+	def js
 		begin
 		  authenticate_public(params[:k])
 		rescue 
@@ -12,38 +12,38 @@ class CaptchasController < ApplicationController
 			send_file 'public/.....', type: 'text/javascript'
 	end
 
-	def gif_request
+	def get
 		begin
 		  authenticate_public(params[:k])
 		  @captcha = JSON.parse(LPOP captcha, :symbolize_keys => true)
 			User.find_by(pub_key: params[:k]).captcha.new(sequence: @captcha[:sequence], image: @captcha[:image], read: false)
-			render :json => { id: @captcha.id, image: @captcha.image }
+			render :json => { id: @captcha.id, image: @captcha.image }, status: 200
 		rescue
 			render nothing: true, status: 420
 		end
 	end
 
-	def response_request
+	def check
 		begin 
 			authenticate_public(params[:k])
 			requested_captcha = Captcha.find(params[:id])
-			if params[:sequence] == requested_captcha.sequence
-				render :json => { success: true }
+			if params[:s] == requested_captcha.sequence
+				render :json => { success: true }, status: 200
 			else 
-				render :json => { success: false }
+				render :json => { success: false }, status: 200
 			end
 		rescue
 			render nothing: true, status: 420
 		end
 	end
 
-	def status_request
+	def status
 		begin
 			authenticate_private(params[:k])
 			if Captcha.find(params[:id]).read
 				render nothing: true, status: 420
 			else
-				render :json => { success: Captcha.find(params[:id]).success }
+				render :json => { success: Captcha.find(params[:id]).success }, status: 200
 			end
 		rescue
 			render nothing: true, status: 420
@@ -51,7 +51,7 @@ class CaptchasController < ApplicationController
 		requested_captcha.status = 'read'
 	end
 
-	private
+private
 
 	def authenticate_public(key)
 		@user = User.find_by(pub_key: key)
@@ -66,7 +66,4 @@ class CaptchasController < ApplicationController
 			raise NotAuthorizedError
 		end
 	end
-
-end
-
 end

@@ -4,9 +4,9 @@ Twiggler::Application.routes.draw do
   root 'pages#home'
 
   post '/captcha.js', to: 'captchas#js_request'
-  post '/gif', to: 'captchas#gif_request'
-  post '/response', to: 'response#request'
-  post '/status', to: 'response#status_request'
+  get '/captcha/get', to: 'captchas#get'
+  post '/captcha/check', to: 'captchas#check'
+  post '/captcha/status', to: 'captchas#status'
 
   post '/new_domain', to: 'domains#create'
 
