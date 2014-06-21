@@ -43,7 +43,7 @@ class CaptchasController < ApplicationController
 			if Captcha.find(params[:id]).read
 				render nothing: true, status: 420
 			else
-				render :json => { state: params[:captcha].success }
+				render :json => { success: Captcha.find(params[:id]).success }
 			end
 		rescue
 			render nothing: true, status: 420
@@ -61,15 +61,9 @@ class CaptchasController < ApplicationController
 	end
 
 	def authenticate_private(key)
-		@user = User.find_by(priv_key: key)
-		if @user
-			if @user.domains.include?("requesting domain")
-				true
-			else 
-				false
-			end
-		else
-			false
+		@user = User.find_by(pub_key: key)
+		unless @user && @user.domains.include?("requesting domain")
+			raise NotAuthorizedError
 		end
 	end
 
