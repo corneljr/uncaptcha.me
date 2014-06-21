@@ -4,11 +4,11 @@
 
 /* Start of homepage styling */
 
-$inactive_blue: #99cfff;
-$inactive_green: #bbff99; 
-$inactive_yellow: #fff599; 
-$inactive_red: #ffa299; 
-$inactive_purple: #d599ff;
+$active_blue: #40a6ff;
+$active_green: #80ff40; 
+$active_yellow: #ffec40; 
+$active_red: #ff5040; 
+$active_purple: #af40ff;
 $font-color: #f5f5f5;
 $font-stack: Helvetica, sans-serif; 
 
@@ -33,7 +33,7 @@ body {
 }
 
 #div1 {
-	background-color: $inactive_blue;
+	background-color: $active_blue;
 	font-family: $font-stack;
 
 	h1 {
@@ -41,19 +41,18 @@ body {
 	padding-top: 5px;
 	white-space: nowrap;
 	text-align: center;
-	color: darken($inactive_blue, 20)
 	}
 
 }
 
 #div2 {
-	background-color: $inactive_green;
+	background-color: $active_green;
 
 	img {
 		border-radius: 10px;
 		box-shadow: 1px 1px 10px 2px #000;
 		height: 100px;
-		width: 250px;
+		width: 300px;
 		margin: auto;
 		display: block;
 		}
@@ -61,20 +60,19 @@ body {
 }
 
 #div3 {
-	background-color: $inactive_yellow;
+	background-color: $active_red;
 	font-family: $font-stack;
 
 	h1 {
-	font-size: 30px;
-	padding-top: 5px;
-	white-space: nowrap;
-	text-align: center;
-	color: darken($inactive_yellow, 45);
+		font-size: 30px;
+		padding-top: 5px;
+		white-space: nowrap;
+		text-align: center;
 	}
 }
 
 #div4 {
-	background-color: $inactive_red;
+	background-color: $active_purple;
 	font-family: $font-stack;
 
 	h1 {
@@ -82,26 +80,37 @@ body {
 		padding-top: 5px;
 		white-space: nowrap;
 		text-align: center;
-		color: darken($inactive_red, 45);
+		margin-bottom: 20px;
 	}
+
+	input[type="password"], input[type="email"] {
+		margin-bottom: 20px;
+	}
+
+	input[type="submit"] {
+		background-color: lighten($active_purple, 10);
+		transition: 2s
+	}
+
+	input[type="submit"]:hover {
+		background-color: #fff;
+	}
+
+
+
 }
 
-#div5 {
-	background-color: $inactive_purple;
-	font-family: $font-stack;
-
-	h1 {
-		font-size: 30px;
-		padding-top: 5px;
-		white-space: nowrap;
-		text-align: center;
-		color: darken($inactive_purple, 45);
+input {
+	border: none;
+	display: block;
+	margin: auto;
+	padding: 0.6rem 1rem;
+	border-radius: 0.25rem;
+	text-align: center;
+	& + & {
+		margin-top: 0.4rem;
 	}
-
-	input {
-		display: block;
+	&:focus {
+		outline: none;
 	}
-
-
-
 }
