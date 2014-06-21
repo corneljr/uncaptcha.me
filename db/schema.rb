@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140621152034) do
+ActiveRecord::Schema.define(version: 20140621154829) do
 
   create_table "captchas", force: true do |t|
     t.string   "sequence"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20140621152034) do
     t.string   "priv_key"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_confirmation"
   end
 
 end
