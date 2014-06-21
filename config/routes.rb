@@ -2,6 +2,14 @@ Twiggler::Application.routes.draw do
 
   resources :users
   root 'pages#home'
+
+  get '/captcha.js', to: 'captchas#js_request'
+  get '/gif', to: 'captchas#gif_request'
+  get '/response' to: 'response#request'
+  get '/status' to: 'response#status_request'
+
+  post '/new_domain', to: 'domains#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
