@@ -1,0 +1,39 @@
+@import 'setup';
+
+code, pre {
+	font-size: 95%;
+	font-family: "Source Code Pro", monospace;
+	background-color: darken($white, 5);
+	border-radius: 0.2rem;
+	padding: 0.15rem 0.25rem;
+	white-space: pre-wrap;
+}
+
+.preferences {
+	article {
+		margin: 0 0 3rem;
+	}
+	.separator {
+		margin-top: 0.6rem;
+	}
+	h2 {
+		font-size: 1.618rem;
+		padding-bottom: 0.3rem;
+		margin-bottom: 0.3rem;
+		border-bottom: 0.1rem solid darken($white, 5);
+	}
+	h3 {
+		font-weight: bold;
+		font-size: 1.238rem;
+		margin-bottom: 0.2rem;
+	}
+	p {
+		margin: 0.4rem 0;
+	}
+	.setup-steps li {
+		margin-bottom: 1.6rem;
+		&:first-child {
+			margin-top: 1rem;
+		}
+	}
+}

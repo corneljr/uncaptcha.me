@@ -24,6 +24,14 @@ section {
   @include clearfix;
 }
 
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
 img {
   width: 100%;
   height: auto;
@@ -48,7 +56,7 @@ h1, h2, h3 {
   }
   &.centered {
     float: none;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
