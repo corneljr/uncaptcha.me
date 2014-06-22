@@ -15,9 +15,8 @@ class CaptchasController < ApplicationController
 	def get
 		begin
 		  Captcha.authenticate_public(params[:k])
-		  gif_sequence = LPOP gifs
-		  @captcha = JSON.parse(:sequence => gif_sequence, :symbolize_keys => true)
-			User.find_by(pub_key: params[:k]).captcha.new(sequence: @captcha[:sequence], image: @captcha[:image], read: false)
+		  @captcha = Captcha.gif()
+			User.find_by(pub_key: params[:k]).captcha.new(sequence: @captcha[:sequence], image: @captcha[:gif], read: false)
 			render :json => { id: @captcha.id, image: @captcha.image }, status: 200
 		rescue
 			render nothing: true, status: 420
@@ -41,7 +40,7 @@ class CaptchasController < ApplicationController
 	def status
 		begin
 			Captcha.authenticate_private(params[:k])
-			if Captcha.find(params[:id]).read
+			if Captcha.find(params[:id]).read?
 				render nothing: true, status: 420
 			else
 				render :json => { success: Captcha.find(params[:id]).success }, status: 200
