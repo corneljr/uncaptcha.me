@@ -40,9 +40,15 @@ h1, h2, h3 {
 }
 
 .column, .columns {
+  min-hieght: 1px;
   @for $n from 1 through 12 {
     &.span-#{$n} {
       @include span-columns($n);
     }
+  }
+  &.centered {
+    float: none;
+    margin-left: auto
+    margin-right: auto;
   }
 }
