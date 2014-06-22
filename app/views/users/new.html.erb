@@ -1,7 +1,21 @@
-<%= form_for @user do |f| %>
+<div id="registration">
+		<%= form_for @user do |f| %>
 
-	<%= f.text_field :email, placeholder: 'email' %>
-	<%= f.text_field :password, placeholder: 'password' %>
-	<%= f.submit 'Uncaptcha Me' %>
+		<%= f.text_field :email, placeholder: 'email' %>
+		<%= f.text_field :password, placeholder: 'password' %>
+		<%= f.submit 'Uncaptcha Me', class: "regbutton" %>
 
-	<% end %>
+		<% end %>
+</div> 
+<div id="div1" class="container">
+</div>
+
+<div id="div2" class="container">	
+</div>
+
+<div id="div3" class="container">
+</div>
+
+<div id="div4" class="container">
+</div>
+

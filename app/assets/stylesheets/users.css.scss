@@ -6,7 +6,9 @@
   They will automatically be included in application.css.
 	You can use Sass (SCSS) here: http://sass-lang.com/*/
 
-/* Start of homepage styling */
+/* Start of general/homepage styling */
+
+/* declare sass variables */
 
 $active_blue: #40a6ff;
 $active_green: #80ff40; 
@@ -55,8 +57,8 @@ body {
 	img {
 		border-radius: 10px;
 		box-shadow: 1px 1px 10px 2px #000;
-		height: 100px;
-		width: 300px;
+		height: 200px;
+		width: 400px;
 		margin: auto;
 		display: block;
 		}
@@ -99,7 +101,6 @@ body {
 	input[type="submit"]:hover {
 		background-color: #fff;
 	}
-
 }
 
 input {
@@ -116,3 +117,12 @@ input {
 		outline: none;
 	}
 }
+
+/* End of general/homepage styling */
+
+/* Start of registration info styling */
+
+#registration {
+	
+}
+
