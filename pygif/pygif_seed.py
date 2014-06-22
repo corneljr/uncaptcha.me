@@ -10,12 +10,12 @@ import redis
 
 for q in range(100):
    images=[]
-   sequences = list(product(['y', 'b', 'g', 'r', 'p'], repeat=4))
+   sequences = list(product(['b', 'y', 'r', 'p', 'g'], repeat=4))
    sequence = choice(sequences)
    sequence_str = ''.join(i for i in sequence)
 
    for i in sequence:
-      i = sequence.index(i)
+      i = ['b', 'y', 'r', 'p', 'g'].index(i)
       ok = Colors(500,100)
       ok.drawCells()
       im = ok.img.convert("P")
