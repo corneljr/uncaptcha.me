@@ -145,9 +145,11 @@ captcha.respond = ->
 
 captcha.logClicks = ->
   color = @.getAttribute("id").charAt(0)
+  console.log(color)
   data.captcha.sequence.push(color)
   if data.captcha.sequence.length == 4
     data.captcha.sequence = data.captcha.sequence.join("")
+    console.log(data.captcha)
     captcha.query()
 
 captcha.watch = ->
@@ -172,6 +174,7 @@ captcha.get = (finish) ->
       data.captcha.id = response.id
       data.captcha.image = response.image
       elements.input.set("value", data.captcha.id)
+      console.log(data.captcha)
       finish()
   http.send()
 
@@ -181,6 +184,7 @@ captcha.check = (finish) ->
   http.onreadystatechange = ->
     if http.readyState == 4 && http.status == 200
       data.captcha.success = JSON.parse(http.responseText).success
+      console.log(data.captcha)
       finish()
   http.send()
 
