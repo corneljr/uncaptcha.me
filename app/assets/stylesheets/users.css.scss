@@ -1,14 +1,6 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'bourbon', 'neat';
 
-/*Place all the styles related to the pages controller here.
-  They will automatically be included in application.css.
-	You can use Sass (SCSS) here: http://sass-lang.com/*/
-
-/* Start of general/homepage styling */
-
-/* declare sass variables */
+$white: #fff;
 
 $active_blue: #40a6ff;
 $active_green: #80ff40;
@@ -18,135 +10,57 @@ $active_purple: #af40ff;
 $font-color: #f5f5f5;
 $font-stack: Helvetica, sans-serif;
 
-* {
-	box-sizing: border-box;
-}
-
-html {
-  background-position: top center;
-  background-color: #FFF;
-  color: white;
-}
-
 body {
-  width: 100%;
-  background-color: #FFF;
+	font: 300 16px/1.6 "Source Serif Pro", $georgia;
+	margin: 0;
+}
+
+section {
+	width: 100%;
+	padding: 8rem;
 }
 
 .container {
+	@include outer-container;
+	@include clearfix;
+}
+
+img {
 	width: 100%;
-	padding: 6rem;
+	height: auto;
 }
 
-#div1 {
-	background-color: $active_blue;
-	font-family: $font-stack;
-
-	h1 {
-	font-size: 30px;
-	padding-top: 5px;
-	white-space: nowrap;
-	text-align: center;
-	}
-
+h1, h2, h3 {
+	font-family: "Source Sans Pro", $helvetica;
+	line-height: 1.1;
 }
 
-#div2 {
-	background-color: $active_green;
+h3 {
+	font-size: 1.618rem;
+}
 
-	img {
-		border-radius: 10px;
-		box-shadow: 1px 1px 10px 2px #000;
-		height: 200px;
-		width: 400px;
-		margin: auto;
-		display: block;
+h3.lede {
+	margin-top: 1rem;
+}
+
+.recaptcha-image {
+	border-radius: 0.6rem;
+	max-width: 20rem;
+	float: right;
+}
+
+.column, .columns {
+	@for $n from 1 through 12 {
+		&.span-#{$n} {
+			@include span-columns($n);
 		}
-
-}
-
-#div3 {
-	background-color: $active_red;
-	font-family: $font-stack;
-
-	h1 {
-		font-size: 30px;
-		padding-top: 5px;
-		white-space: nowrap;
-		text-align: center;
 	}
 }
 
-#div4 {
-	background-color: $active_purple;
-	font-family: $font-stack;
-
-	h1 {
-		font-size: 30px;
-		padding-top: 5px;
-		white-space: nowrap;
-		text-align: center;
-		margin-bottom: 20px;
-	}
-
-	input[type="password"], input[type="email"] {
-		margin-bottom: 20px;
-	}
-
-	input[type="submit"] {
-		background-color: lighten($active_purple, 10);
-		transition: 0.5s;
-	}
-
-	input[type="submit"]:hover {
-		background-color: #fff;
-	}
+#second {
+	background: darken($white, 5);
 }
 
-input {
-	border: none;
-	display: block;
-	margin: auto;
-	padding: 0.6rem 1rem;
-	border-radius: 0.25rem;
-	text-align: center;
-	& + & {
-		margin-top: 1.5rem;
-	}
-	&:focus {
-		outline: none;
-	}
+#third {
+	background: darken($white, 10);
 }
-
-/* End of general/homepage styling */
-
-/* Start of registration info styling */
-
-#registration {
-	position: absolute;
-	width: 100%;
-	text-align: center;
-	margin-top: 275px;
-
-	h1 {
-		font-size: 30px;
-		padding-top: 5px;
-		white-space: nowrap;
-		text-align: center;
-		font-family: $font-stack;
-	}
-}
-
-#new_user {
-	display: inline-block;
-}
-
-#regbutton {
-	background-color: lighten($active_red, 10);
-	transition: 0.5s
-}
-
-#regbutton:hover {
-	background-color: white;
-}
-

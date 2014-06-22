@@ -1,3 +1,4 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).on("ready page:load", ->
+  $("h1").fitText(1.6, { minFontSize: '48px', maxFontSize: '96px' })
+  $("h2").fitText(1.5, { minFontSize: '32px', maxFontSize: '48px' })
+)
