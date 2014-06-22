@@ -19,19 +19,6 @@ class UsersController < ApplicationController
 	end
 
 	def preferences
-		@user = current_user
-		@domains = Domain.where(user_id: @user.id)
-	end
-
-	def update
-		user_params = params.require(:user).permit(:email, :password, :domains)
-		domains = user_params[:domains].split(",").map(&:strip)
-		unless user_params[:password].empty?
-			current_user.password = user_params[:password]
-			current_user.save
-		end
-		current_user.update(email: user_params[:email])
-		redirect_to preferences_path
 	end
 
 private

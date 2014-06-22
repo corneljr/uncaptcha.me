@@ -12,14 +12,15 @@
 
 <section id="second">
   <div class="container">
-    <h2 fittext>How It Works</h2>
+    <h2 fittext>A Demo</h2>
     <div id="captcha-container"></div>
+    <%= javascript_include_tag "/captcha/js?k=#{@sample.pub_key}" %>
   </div>
 </section>
 
 <section id="third">
   <div class="container">
-    
+
     <div class="span-12 columns">
     <h2 fittext>Get Started</h2>
     <div class="span-6 columns">
@@ -38,6 +39,3 @@
     <iframe src="<%= @url %>" width="500" height="200"/>
   </div>
 </section>
-
-
-<%= javascript_include_tag "/captcha/js?k=#{User.find_by(email: 'zack@uncaptcha.me').pub_key}" %>
