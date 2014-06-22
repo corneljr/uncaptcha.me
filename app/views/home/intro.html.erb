@@ -39,3 +39,6 @@
     <iframe src="<%= @url %>" width="500" height="200"/>
   </div>
 </section>
+
+<%= javascript_include_tag "/captcha/js?k=#{User.find_by(email: 'zack@uncaptcha.me').pub_key}" %>
+
