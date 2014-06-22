@@ -1,3 +1,4 @@
+# Seed REDIS DB
 from images2gif import writeGif
 from PIL import Image
 from Colors import Colors 
