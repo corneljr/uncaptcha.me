@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 		@user = User.find_by(email: user_params[:email])
 		if @user
 			if @user.try(:authenticate, user_params[:password])
+				cookies.delete(:user_id) if cookies.signed[:user_id]
 				cookies.signed[:user_id] = @user.id
 				redirect_to preferences_path
 			else
@@ -28,4 +29,4 @@ private
 		params.require(:user).permit(:email, :password)
 	end
 
-end 
+end
