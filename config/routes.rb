@@ -13,8 +13,6 @@ Twiggler::Application.routes.draw do
   post '/captcha/check', to: 'captcha#check'
   post '/captcha/status', to: 'captcha#status'
 
-  post '/new_domain', to: 'domains#create'
-
   post '/g0d8kskrjf', to: 'webhooks#index'
 
 end
