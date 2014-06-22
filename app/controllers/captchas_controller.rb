@@ -1,5 +1,3 @@
-
-
 class CaptchasController < ApplicationController
 	# before_filter :authenticate, except: [:status]
 
