@@ -9,8 +9,13 @@ import base64
 import json
 import redis
 
+filters = [
+"-background White  -wave 10x64",
+"-blur 0x5",
+]
+
 images=[]
-sequences = list(product(['y', 'b', 'g', 'r', 'p'], repeat=4))
+sequences = list(product(['b', 'y', 'r', 'p','g'], repeat=4))
 
 
 def appendGif():
@@ -18,7 +23,7 @@ def appendGif():
    sequence_str = ''.join(i for i in sequence)
 
    for i in sequence:
-      i = sequence.index(i)
+      i = ['b', 'y', 'r', 'p','g'].index(i)
       ok = Colors(500,100)
       ok.drawCells()
       im = ok.img.convert("P")
@@ -37,7 +42,7 @@ def appendGif():
 
    writeGif(sequence_str+".gif", images, duration=0.5, repeat=False)
 
-   system("convert %s -colors 10 %s" % (sequence_str+".gif", sequence_str+".gif"))
+   system("convert %s -colors 10 %s %s" % (sequence_str+".gif", choice(filters), sequence_str+".gif"))
    with open(sequence_str+".gif", "rb") as image_file:
       encoded_string = base64.b64encode(image_file.read())
 
