@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
 	def create
-		if @user = User.find_by(email: user_params[:email])
+		@user = User.find_by(email: user_params[:email])
+		if @user
 			if @user.try(:authenticate, user_params[:password])
 				cookies.signed[:user_id] = @user.id
 				redirect_to preferences_path

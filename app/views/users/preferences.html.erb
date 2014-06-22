@@ -27,12 +27,12 @@
         <li>
           <h3>Step 2: Add the Script</h3>
           <p>Add the following script tag wherever you keep your scripts.</p>
-          <pre>&lt;script src="https://uncatch.me/captcha/js?k=<%= current_user.pub_key %>"&gt;</script></pre>
+          <pre>&lt;script src="https://uncaptcha.me/captcha/js?k=<%= current_user.pub_key %>"&gt;</script></pre>
         </li>
         <li>
           <h3>Step 3: Query Our API</h3>
           <p>On your backend, send a <code>GET</code> request to the following URL, where <code>[captcha_id]</code> is a parameter supplied to your form automatically by Uncaptcha.</p>
-          <code>https://uncatch.me/captcha/status?k=<%= current_user.priv_key %>&amp;id=[captcha_id]</code>
+          <code>https://uncaptcha.me/captcha/status?k=<%= current_user.priv_key %>&amp;id=[captcha_id]</code>
           <p>This'll return a JSON response like below, where <code>status</code> is <code>true</code> or <code>false</code>, denoting whether or not the user authenticated.</p>
           <code>{ success: status }</code>
         </li>

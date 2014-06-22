@@ -1,10 +1,15 @@
 @import 'setup';
 
-html {
-  background-color: slategray;
-}
 #catch {
   background-color: white;
+}
+
+h1 {
+  font-size: 4.068rem;
+}
+
+h2 {
+  font-size: 2.618rem;
 }
 
 h3 {
@@ -19,8 +24,8 @@ h3.lede {
   background: darken($white, 5);
 }
 
-#captcha-container {
-  margin-top: 1.6rem;
+#force-this-shit-to-the-right, #captcha-container {
+  float: right;
 }
 
 #third {
@@ -47,7 +52,6 @@ input {
   border: none;
   margin-right: 15px;
   border: 0.1rem solid darken($white, 5);
-  margin-top: 0.8rem;
   &:focus {
     outline: none;
   }
@@ -57,6 +61,9 @@ input {
   &.block {
     display: block;
     width: 100%;
+    & + & {
+      margin-top: 0.6rem;
+    }
   }
 }
 
@@ -65,6 +72,7 @@ div .span-12 {
  }
 
 a {
+  cursor: pointer;
   text-align: center;
   display: block;
   text-decoration: none;
@@ -73,8 +81,6 @@ a {
   color: white;
 }
 
-a:hover {
-  cursor: pointer;
+#four {
+  background: darken($white, 20);
 }
-
-

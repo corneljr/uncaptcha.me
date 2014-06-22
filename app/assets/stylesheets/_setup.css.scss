@@ -54,6 +54,9 @@ h1, h2, h3 {
       @include span-columns($n);
     }
   }
+  &:last-child {
+    float: right;
+  }
   &.centered {
     float: none;
     margin-left: auto !important;

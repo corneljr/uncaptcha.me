@@ -1,8 +1,7 @@
 <section id="catch">
   <div class="container">
     <div class="span-7 columns">
-      <h1 fittext>Your users deserve better than this.</h1>
-      <h3 class="lede">Delight your users with a fun captcha, not one that will leave them scratching their heads.</h3>
+      <h1>Your users deserve better than this.</h1>
     </div>
     <div class="span-5 columns">
       <%= image_tag "captcha.jpg", class: "recaptcha-image" %>
@@ -12,22 +11,26 @@
 
 <section id="second">
   <div class="container">
-    <h2 fittext>A Demo</h2>
-    <div id="captcha-container"></div>
+    <div class="span-5 columns" style="margin-right: 0 !important;">
+      <h2>The Future of Captchas</h2>
+    </div>
+    <div class="span-7 columns" style="float: right;">
+      <div id="captcha-container"></div>
+    </div>
     <%= javascript_include_tag "/captcha/js?k=#{@sample.pub_key}" %>
   </div>
 </section>
 
 <section id="third">
   <div class="container">
-
-    <div class="span-12 columns">
-    <h2 fittext>Get Started</h2>
-    <div class="span-6 columns">
+    <div class="span-7 columns">
+      <h2>Get Started</h2>
+    </div>
+    <div class="span-5 columns">
       <%= form_for @user do |f| %>
-        <%= f.email_field :email, :placeholder => "Email: john@smith.com" %>
-        <%= f.password_field :password, :placeholder => "Password: Mr.Anderson" %>
-        <%= f.submit "Uncaptcha Me" %>
+        <%= f.email_field :email, :placeholder => "your email", class: 'block' %>
+        <%= f.password_field :password, :placeholder => "your password", class: 'block' %>
+        <%= f.submit "Sign Up / Login", class: 'block' %>
       <% end %>
     </div>
   </div>
@@ -35,10 +38,11 @@
 
 <section id="four">
   <div class="container">
-    <h2 fittext>Support Further Development</h2>
-    <iframe src="<%= @url %>" width="500" height="200"/>
+    <div class="span-5 columns">
+      <h2>Support Further Development</h2>
+    </div>
+    <div class="span-7 columns">
+      <iframe src="<%= @url %>" width="500" height="200" style="float: right;">
+    </div>
   </div>
 </section>
-
-<%= javascript_include_tag "/captcha/js?k=#{User.find_by(email: 'zack@uncaptcha.me').pub_key}" %>
-
