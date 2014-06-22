@@ -4,7 +4,7 @@ class DomainsController < ApplicationController
 		@domain = Domain.new(domain_params)
 		if @domain.save
 			redirect_to user(current_user)
-		else 
+		else
 			redirect_to edit_user(current_user)
 		end
 	end
