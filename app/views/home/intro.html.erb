@@ -17,6 +17,14 @@
   </div>
 </section>
 
+<%= form_for @user, action: users_session_path do |f| %>
+
+  <%= f.email_field :email, :autofocus => true %>
+  <%= f.password_field :password, :autocomplete => 'off' %>
+  <%= f.submit "Login" %>
+
+<% end %>
+
 <section id="third">
   <div class="container">
     <h2>Get Started</h2>
@@ -28,7 +36,7 @@
       <% end %>
     </div>
     <div class="span-6 columns">
-    </div> 
+    </div>
   </div>
 </section>
 

@@ -8,17 +8,13 @@ $inactive: #99cfff, #bbff99, #fff599, #ffa299, #d599ff;
 
 $height: 5rem;
 
-body {
-  font: 300 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 0;
-}
-
 main {
   margin: ($height / 2) auto;
   width: $height * 5;
 }
 
 #captcha-container {
+  font: 300 16px/1.5 inherit;
   color: #232323;
   width: $height * 5;
   height: $height * 1.4;
