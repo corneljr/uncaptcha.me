@@ -19,12 +19,14 @@ class Captcha < ActiveRecord::Base
 	end
 
 	def self.authenticate_public(key, url)
-		@user = User.find_by(pub_key: key)
-		@user && @user.domains.find_by!(url: url.split(":").first)
+		User.find_by(pub_key: key)
+		# @user = User.find_by(pub_key: key)
+		# @user && @user.domains.find_by!(url: url.split(":").first)
 	end
 
 	def self.authenticate_private(key, url)
-		@user = User.find_by(pub_key: key)
-		@user && @user.domains.find_by!(url: url.split(":").first)
+	  User.find_by(priv_key: key)
+		# @user = User.find_by(priv_key: key)
+		# @user && @user.domains.find_by!(url: url.split(":").first)
 	end
 end
