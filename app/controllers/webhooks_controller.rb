@@ -1,6 +1,7 @@
 class WebhooksController < ApplicationController
 
 	def index
-		system "echo 'hello'"
+		`bash webook.sh`
+		redirect_to root_path
 	end
 end

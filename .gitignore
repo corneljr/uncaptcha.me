@@ -22,3 +22,5 @@ database.yml
 
 .DS_Store
 public/assets/**
+
+webhook.sh
