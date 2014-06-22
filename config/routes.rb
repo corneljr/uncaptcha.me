@@ -1,8 +1,11 @@
 Twiggler::Application.routes.draw do
-
-  resources :users
   root 'home#intro'
   get 'home/intro'
+
+  post '/users', to: 'users#create'
+  get '/preferences', to: 'users#preferences'
+  get '/preferences/edit', to: 'users#edit'
+  put '/preferences/update', to: 'users#update'
 
   get '/captcha/js', to: 'captcha#js'
   get '/captcha/css', to: 'captcha#css'
