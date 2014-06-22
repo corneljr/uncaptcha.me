@@ -1,0 +1,34 @@
+<section>
+  <div class="span-10 columns centered">
+    <article>
+      <h2><strong>Public Key</strong> <%= current_user.pub_key %></h2>
+      <p>This key gives you access to the Uncaptcha API. It's okay for people to know this.</p>
+    </article>
+
+    <article>
+      <h2><strong>Private Key</strong> <%= current_user.priv_key %></h2>
+      <p>Keep your private key safe, as it's the only way to verify that a form has been authenticated.</p>
+    </article>
+
+    <article>
+      <h2>Setup</h2>
+      <ol class="setup-steps">
+        <li>
+          <h3>Step 1</h3>
+          <p>Within your HTML <code>form</code> element</p>
+        </li>
+        <li>
+          <h3>Step 2</h3>
+        </li>
+        <li>
+          <h3>Step 3</h3>
+        </li>
+      </ol>
+    </article>
+
+    <article>
+      <h2>Settings</h2>
+    </article>
+
+  </div>
+</section>

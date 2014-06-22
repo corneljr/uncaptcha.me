@@ -10,8 +10,9 @@ import json
 import redis
 
 filters = listdir("filters/")
+
 images=[]
-sequences = list(product(['y', 'b', 'g', 'r', 'p'], repeat=4))
+sequences = list(product(['b', 'y', 'r', 'p','g'], repeat=4))
 
 
 def appendGif():
@@ -21,6 +22,7 @@ def appendGif():
    for i in sequence:
       filter = Image.open("filters/"+choice(filters))
       i = sequence.index(i)
+      i = ['b', 'y', 'r', 'p','g'].index(i)
       ok = Colors(500,100)
       ok.drawCells()
       ok.img.paste(filter, (0, 0), filter)

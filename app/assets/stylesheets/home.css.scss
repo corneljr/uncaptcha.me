@@ -1,3 +1,50 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'setup';
+
+h3 {
+  font-size: 1.618rem;
+}
+
+h3.lede {
+  margin-top: 1rem;
+}
+
+#second {
+  background: darken($white, 5);
+}
+
+#third {
+  background: darken($white, 10);
+}
+
+button, .button {
+  @include transition(0.5s);
+  background-color: #232323;
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    background-color: $active_purple;
+  }
+}
+
+
+input {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  font: inherit;
+  font-size: 1.15rem;
+  border-radius: 0.3rem;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+  & + & {
+    margin-top: 0.8rem;
+  }
+  &[type="submit"] {
+    @extend button;
+  }
+}
+
+#new_user {
+
+}

@@ -1,0 +1,8 @@
+<%= form_for @user do |f| %>
+
+<%= f.email_field :email, :autofocus => true %>
+<%= f.password_field :password, :autocomplete => 'off' %>
+<%= f.url_field :domains %>
+<%= f.submit "Update"  %>
+
+<% end %>
