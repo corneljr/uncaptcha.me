@@ -43,7 +43,7 @@ data = {
   captcha: {
     html: '<div id="state-container"><img id="state-viewer"></div><div id="image-container"><img id="image-viewer"></div><div id="response-container"><div class="captcha-button" id="blue-button"></div><div class="captcha-button" id="yellow-button"></div><div class="captcha-button" id="red-button"></div><div class="captcha-button" id="purple-button"></div><div class="captcha-button" id="green-button"></div></div><div id="helpers-container"><p id="helper-text" data-view="memorize the pattern" data-respond="please repeat the pattern"></p><p id="helper-actions" data-view="redo" data-respond="redo"></p></div><input type="hidden" name="captcha_id" id="captcha_id" value="null">'
     id: null,
-    sequence: [],
+    sequence: "",
     success: null,
     length: 4.2 * 1000,
     image: null
@@ -118,7 +118,7 @@ view = {
 captcha = {}
 
 captcha.reset = ->
-  data.captcha.sequence = []
+  data.captcha.sequence = ""
   view.hide.captcha()
   view.hide.helpers()
   view.hide.respond()
@@ -145,11 +145,8 @@ captcha.respond = ->
 
 captcha.logClicks = ->
   color = @.getAttribute("id").charAt(0)
-  console.log(color)
-  data.captcha.sequence.push(color)
+  data.captcha.sequence += color
   if data.captcha.sequence.length == 4
-    data.captcha.sequence = data.captcha.sequence.join("")
-    console.log(data.captcha)
     captcha.query()
 
 captcha.watch = ->
@@ -174,7 +171,6 @@ captcha.get = (finish) ->
       data.captcha.id = response.id
       data.captcha.image = response.image
       elements.input.set("value", data.captcha.id)
-      console.log(data.captcha)
       finish()
   http.send()
 
@@ -184,7 +180,6 @@ captcha.check = (finish) ->
   http.onreadystatechange = ->
     if http.readyState == 4 && http.status == 200
       data.captcha.success = JSON.parse(http.responseText).success
-      console.log(data.captcha)
       finish()
   http.send()
 
