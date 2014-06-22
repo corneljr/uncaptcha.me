@@ -7,7 +7,7 @@ gem 'rails', '~> 4.1.1'
 gem 'pg'
 gem 'bcrypt', '~> 3.1.7'
 gem 'redis'
-
+gem 'bitpay-client', :require => 'bitpay'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 

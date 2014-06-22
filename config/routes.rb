@@ -6,6 +6,8 @@ Twiggler::Application.routes.draw do
   get '/preferences', to: 'users#preferences'
   put '/preferences/update', to: 'users#update'
 
+  get '/bitcoin_donation', to: 'home#bitcoin_donation'
+
   get '/captcha/js', to: 'captcha#js'
   get '/captcha/css', to: 'captcha#css'
   get '/captcha/get', to: 'captcha#get'
