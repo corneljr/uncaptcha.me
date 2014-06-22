@@ -1,3 +1,4 @@
+# A Simon Game Gif Generator Library
 from PIL import Image
 class Colors():
 
