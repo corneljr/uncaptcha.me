@@ -4,11 +4,12 @@ from PIL import Image
 from Colors import Colors 
 from itertools import product
 from random import choice
-from os import remove, system
+from os import remove, system, listdir
 import base64
 import json
 import redis
 
+filters = listdir("filters/")
 images=[]
 sequences = list(product(['y', 'b', 'g', 'r', 'p'], repeat=4))
 
@@ -18,9 +19,11 @@ def appendGif():
    sequence_str = ''.join(i for i in sequence)
 
    for i in sequence:
+      filter = Image.open("filters/"+choice(filters))
       i = sequence.index(i)
       ok = Colors(500,100)
       ok.drawCells()
+      ok.img.paste(filter, (0, 0), filter)
       im = ok.img.convert("P")
       images.append(im)
       ok = Colors(500,100)

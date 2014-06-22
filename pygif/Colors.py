@@ -1,5 +1,5 @@
 # A Simon Game Gif Generator Library
-from PIL import Image
+from PIL import Image, ImageFilter
 class Colors():
 
     def __init__(self, x=None, y=None, bg=None, padding=0):

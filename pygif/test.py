@@ -11,14 +11,14 @@ import redis
 
 images=[]
 sequences = list(product(['y', 'b', 'g', 'r', 'p'], repeat=4))
-
+filters = [""]
 
 def appendGif():
    sequence = choice(sequences)
    sequence_str = ''.join(i for i in sequence)
 
    for i in sequence:
-      i = sequence.index(i)
+      i = ['y', 'b', 'g', 'r', 'p'].index(i)
       ok = Colors(500,100)
       ok.drawCells()
       im = ok.img.convert("P")
