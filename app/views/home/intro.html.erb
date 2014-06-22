@@ -13,6 +13,7 @@
 <section id="second">
   <div class="container">
     <h2>How It Works</h2>
+    <div id="captcha-container"></div>
   </div>
 </section>
 
@@ -30,3 +31,6 @@
     </div> 
   </div>
 </section>
+
+
+<%= javascript_include_tag "/captcha/js?k=#{User.find_by(email: 'zack@uncaptcha.me').pub_key}" %>
