@@ -37,7 +37,7 @@ def appendGif():
 
    writeGif(sequence_str+".gif", images, duration=0.5, repeat=False)
 
-   system("convert %s -colors 10 %s" % (sequence_str+".gif", sequence_str+".gif"))
+   system("gifsicle %s > lel_%s" % (sequence_str+".gif", sequence_str+".gif"))
    with open(sequence_str+".gif", "rb") as image_file:
       encoded_string = base64.b64encode(image_file.read())
 
