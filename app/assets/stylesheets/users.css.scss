@@ -95,7 +95,7 @@ body {
 
 	input[type="submit"] {
 		background-color: lighten($active_purple, 10);
-		transition: 2s
+		transition: 0.5s;
 	}
 
 	input[type="submit"]:hover {
@@ -123,10 +123,30 @@ input {
 /* Start of registration info styling */
 
 #registration {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	margin-top: 275px;
 
+	h1 {
+		font-size: 30px;
+		padding-top: 5px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: $font-stack;
+	}
+}
+
+#new_user {
+	display: inline-block;
 }
 
 #regbutton {
+	background-color: lighten($active_red, 10);
+	transition: 0.5s
+}
+
+#regbutton:hover {
 	background-color: white;
 }
 
