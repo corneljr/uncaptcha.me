@@ -1,7 +1,7 @@
 <section id="catch">
   <div class="container">
     <div class="span-7 columns">
-      <h1>Your users deserve better than this.</h1>
+      <h1 fittext>Your users deserve better than this.</h1>
       <h3 class="lede">Delight your users with a fun captcha, not one that will leave them scratching their heads.</h3>
     </div>
     <div class="span-5 columns">
@@ -12,22 +12,25 @@
 
 <section id="second">
   <div class="container">
-    <h2>How It Works</h2>
+    <h2 fittext>How It Works</h2>
     <div id="captcha-container"></div>
   </div>
 </section>
 
 <section id="third">
   <div class="container">
+<<<<<<< HEAD
     <h2>Get Started</h2>
+    <div class="span-12 columns">
+=======
+    <h2 fittext>Get Started</h2>
     <div class="span-6 columns">
+>>>>>>> 6498699b2547dc43507cb1f7860cb90c8868f678
       <%= form_for @user do |f| %>
         <%= f.email_field :email, :placeholder => "Email: john@smith.com" %>
         <%= f.password_field :password, :placeholder => "Password: Mr.Anderson" %>
         <%= f.submit "Uncaptcha Me" %>
       <% end %>
-    </div>
-    <div class="span-6 columns">
     </div>
   </div>
 </section>

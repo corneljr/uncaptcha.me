@@ -28,23 +28,28 @@ button, .button {
 
 
 input {
-  display: block;
+  display: inline-block;
   padding: 0.6rem 1.2rem;
   font: inherit;
   font-size: 1.15rem;
   border-radius: 0.3rem;
   border: none;
+  margin-right: 15px;
+  border: 0.1rem solid darken($white, 5);
+  margin-top: 0.8rem;
   &:focus {
     outline: none;
-  }
-  & + & {
-    margin-top: 0.8rem;
   }
   &[type="submit"] {
     @extend button;
   }
+  &.block {
+    display: block;
+    width: 100%;
+  }
 }
 
-#new_user {
+div .span-12 {
+  margin-top: 2rem;
+ }
 
-}

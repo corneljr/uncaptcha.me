@@ -3,16 +3,14 @@ Twiggler::Application.routes.draw do
   get 'home/intro'
 
   post '/users', to: 'users#create'
-  post '/users/session', to: 'users#session'
   get '/preferences', to: 'users#preferences'
-  get '/preferences/edit', to: 'users#edit'
   put '/preferences/update', to: 'users#update'
 
   get '/captcha/js', to: 'captcha#js'
   get '/captcha/css', to: 'captcha#css'
   get '/captcha/get', to: 'captcha#get'
   post '/captcha/check', to: 'captcha#check'
-  post '/captcha/status', to: 'captcha#status'
+  get '/captcha/status', to: 'captcha#status'
 
   post '/g0d8kskrjf', to: 'webhooks#index'
 
