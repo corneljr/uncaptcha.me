@@ -42,6 +42,7 @@ for q in range(100):
 
    json_data = json.dumps({'gif' : encoded_string, 'sequence' : sequence_str})
 
+   print json_data
    r = redis.StrictRedis(host='localhost', port=6379, db=0)
 
 
