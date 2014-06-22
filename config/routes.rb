@@ -4,7 +4,7 @@ Twiggler::Application.routes.draw do
 
   post '/users', to: 'users#create'
   get '/preferences', to: 'users#preferences'
-  put '/preferences/update', to: 'users#update'
+  patch '/preferences/update', to: 'users#update'
 
   get '/bitcoin_donation', to: 'home#bitcoin_donation'
 

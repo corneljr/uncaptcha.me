@@ -1,6 +1,7 @@
 require 'securerandom'
 
 class User < ActiveRecord::Base
+	attr_accessor :domains
 	has_secure_password
 	has_many :domains
 	has_many :captchas
