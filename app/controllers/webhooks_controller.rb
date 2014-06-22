@@ -1,6 +1,6 @@
 class WebhooksController < ApplicationController
 
 	def index
-		system 'echo 'hello''
+		system "echo 'hello'"
 	end
 end
