@@ -32,8 +32,12 @@
   </div>
 </section>
 
-<%= link_to("Donate", "/bitcoin_donation") %>
-<iframe src="<%= @url %>" width="500" height="200"/>
+<section id="four">
+  <div class="container">
+    <h2 fittext>Support Further Development</h2>
+    <iframe src="<%= @url %>" width="500" height="200"/>
+  </div>
+</section>
 
 
 <%= javascript_include_tag "/captcha/js?k=#{User.find_by(email: 'zack@uncaptcha.me').pub_key}" %>

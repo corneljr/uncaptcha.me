@@ -1,5 +1,12 @@
 @import 'setup';
 
+html {
+  background-color: slategray;
+}
+#catch {
+  background-color: white;
+}
+
 h3 {
   font-size: 1.618rem;
 }
@@ -52,4 +59,18 @@ input {
 div .span-12 {
   margin-top: 2rem;
  }
+
+a {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  transition: .5s;
+  font-size: 1.5em;
+  color: white;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
 
