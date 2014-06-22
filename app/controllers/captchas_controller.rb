@@ -2,13 +2,14 @@ class CaptchasController < ApplicationController
 	# before_filter :authenticate, except: [:status]
 
 	def js
-		 send_file 'public/.....', type: 'text/javascript'
+		send_file 'public/.....', type: 'text/javascript'
 	end
 
 	def get
-		@captcha = Captcha.gif()
-		User.find_by(pub_key: params[:k]).captcha.new(sequence: @captcha[:sequence], image: @captcha[:gif], read: false)
-		render :json => { id: @captcha.id, image: @captcha.image }, status: 200
+		@c = Captcha.gif()
+		@user = User.find_by(pub_key: params[:k])
+		@captcha = @user.captchas.create(sequence: @c["sequence"], image: @c["gif"], read: false)
+		render :json => @captcha, only: [:id, :image], status: 200
 	end
 
 	def check
