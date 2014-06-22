@@ -1,4 +1,5 @@
 class Captcha < ActiveRecord::Base
+	belongs_to :user
 
 	def read?
 		read_attribute(:read)

@@ -43,7 +43,7 @@ data = {
   captcha: {
     html: '<div id="state-container"><img id="state-viewer"></div><div id="image-container"><img id="image-viewer"></div><div id="response-container"><div class="captcha-button" id="blue-button"></div><div class="captcha-button" id="yellow-button"></div><div class="captcha-button" id="red-button"></div><div class="captcha-button" id="purple-button"></div><div class="captcha-button" id="green-button"></div></div><div id="helpers-container"><p id="helper-text" data-view="memorize the pattern" data-respond="please repeat the pattern"></p><p id="helper-actions" data-view="redo" data-respond="redo"></p></div><input type="hidden" name="captcha_id" value="null">'
     id: null,
-    key: "<%= @captcha.user.pub_key %>",
+    key: 'c692804b88d0e6cd',
     sequence: [],
     success: null,
     length: 4.2 * 1000,
@@ -114,8 +114,7 @@ captcha.start = ->
   clearTimeout(data.captcha.waiter)
   # Preparing
   view.show.state("play")
-  elements.state.watch("click", captcha.show)
-  # captcha.get(-> elements.state.watch("click tap", captcha.show))
+  captcha.get(-> elements.state.watch("click", captcha.show))
 
 captcha.show = ->
   view.hide.state()
@@ -152,6 +151,7 @@ captcha.query = ->
   elements.colors.unwatch("click", captcha.logClicks)
 
 captcha.get = (finish) ->
+  console.log("Getting...")
   http = new XMLHttpRequest()
   http.open("GET", "/captcha/get?k=#{data.captcha.key}", true)
   http.onreadystatechange = ->

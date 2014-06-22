@@ -1,16 +1,14 @@
 require 'securerandom'
 
 class User < ActiveRecord::Base
-	after_initialize :set_keys
 	has_secure_password
-
 	has_many :domains
-
-	# validates :name, presence: true
+	has_many :captchas
 	validates :password, length: { minimum: 6 }, confirmation: false
 	validates :email, uniqueness: { case_sensitive: false }
+	before_save :set_keys, only: [:create]
 
-	private
+private
 
 	def set_keys
 		@password_confirmation = @password
