@@ -19,5 +19,14 @@
 <section id="third">
   <div class="container">
     <h2>Get Started</h2>
+    <div class="span-6 columns">
+      <%= form_for @user do |f| %>
+        <%= f.email_field :email, :placeholder => "Email: john@smith.com" %>
+        <%= f.password_field :password, :placeholder => "Password: Mr.Anderson" %>
+        <%= f.submit "Uncaptcha Me" %>
+      <% end %>
+    </div>
+    <div class="span-6 columns">
+    </div> 
   </div>
 </section>

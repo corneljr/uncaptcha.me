@@ -40,6 +40,7 @@ h1, h2, h3 {
 }
 
 .column, .columns {
+  min-height: 1px;
   @for $n from 1 through 12 {
     &.span-#{$n} {
       @include span-columns($n);
