@@ -5,6 +5,10 @@ class Captcha < ActiveRecord::Base
 		self.sequence == sequence
 	end
 
+	def status
+		read_attribute(:success)
+	end
+
 	def read?
 		read_attribute(:read)
 	end

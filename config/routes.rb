@@ -3,10 +3,11 @@ Twiggler::Application.routes.draw do
   resources :users
   root 'test#index'
 
-  post '/captcha', to: 'captchas#js'
-  get '/captcha/get', to: 'captchas#get'
-  post '/captcha/check', to: 'captchas#check'
-  post '/captcha/status', to: 'captchas#status'
+  get '/captcha/js', to: 'captcha#js'
+  get '/captcha/css', to: 'captcha#css'
+  get '/captcha/get', to: 'captcha#get'
+  post '/captcha/check', to: 'captcha#check'
+  post '/captcha/status', to: 'captcha#status'
 
   post '/new_domain', to: 'domains#create'
 

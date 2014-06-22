@@ -1,0 +1,146 @@
+body {
+  font: 300 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+main {
+  margin: 2.5rem auto;
+  width: 25rem;
+}
+
+#captcha-container {
+  color: #232323;
+  width: 25rem;
+  height: 7rem;
+}
+#captcha-container img {
+  pointer-events: none;
+}
+
+#state-container,
+#image-container,
+#response-container,
+#helpers-container {
+  display: none;
+}
+#state-container.show,
+#image-container.show,
+#response-container.show,
+#helpers-container.show {
+  display: block;
+}
+
+#image-container,
+#response-container {
+  height: 5rem;
+  font-size: 0;
+  text-align: center;
+}
+
+#helpers-container {
+  height: 2rem;
+}
+#helpers-container p {
+  user-select: none;
+  display: block;
+  margin: 0 0.5rem;
+  float: left;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+#helpers-container p:last-child {
+  float: right;
+}
+#helpers-container #helper-actions {
+  cursor: pointer;
+}
+#helpers-container #helper-actions:hover {
+  font-weight: 600;
+}
+
+#state-container {
+  height: 7rem;
+  text-align: center;
+  cursor: pointer;
+}
+#state-container.play {
+  background-color: #222222;
+}
+#state-container.success {
+  background-color: #34f02c;
+}
+#state-container.retry {
+  background-color: tomato;
+}
+#state-container img {
+  margin-top: 1.5rem;
+  height: 4rem;
+  width: auto;
+}
+
+#image-viewer {
+  width: 100%;
+  height: auto;
+}
+
+.captcha-button {
+  display: inline-block;
+  cursor: pointer;
+  width: 5rem;
+  height: 5rem;
+}
+.captcha-button#blue-button {
+  opacity: 0.8;
+  background-color: #99cfff;
+}
+.captcha-button#blue-button:hover, .captcha-button#blue-button.active {
+  opacity: 1;
+  background-color: #40a6ff;
+}
+.captcha-button#blue-button:active {
+  opacity: 0.7;
+}
+.captcha-button#green-button {
+  opacity: 0.8;
+  background-color: #bbff99;
+}
+.captcha-button#green-button:hover, .captcha-button#green-button.active {
+  opacity: 1;
+  background-color: #80ff40;
+}
+.captcha-button#green-button:active {
+  opacity: 0.7;
+}
+.captcha-button#yellow-button {
+  opacity: 0.8;
+  background-color: #fff599;
+}
+.captcha-button#yellow-button:hover, .captcha-button#yellow-button.active {
+  opacity: 1;
+  background-color: #ffec40;
+}
+.captcha-button#yellow-button:active {
+  opacity: 0.7;
+}
+.captcha-button#red-button {
+  opacity: 0.8;
+  background-color: #ffa299;
+}
+.captcha-button#red-button:hover, .captcha-button#red-button.active {
+  opacity: 1;
+  background-color: #ff5040;
+}
+.captcha-button#red-button:active {
+  opacity: 0.7;
+}
+.captcha-button#purple-button {
+  opacity: 0.8;
+  background-color: #d599ff;
+}
+.captcha-button#purple-button:hover, .captcha-button#purple-button.active {
+  opacity: 1;
+  background-color: #af40ff;
+}
+.captcha-button#purple-button:active {
+  opacity: 0.7;
+}
