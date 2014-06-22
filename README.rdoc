@@ -1,6 +1,6 @@
 == Uncaptcha
 
-Uncaptcha allows website administrator to modify their captchas. Instead of using the stock recaptcha to validate users, recaptcha gamifies the authentication process.
+Uncaptcha allows website administrators to modify their captchas. Instead of using the stock recaptcha to validate users, recaptcha gamifies the authentication process.
 
 Users view and memorize a series of pulsating colors to authenticate themselves.
 
