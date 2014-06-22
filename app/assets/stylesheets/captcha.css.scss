@@ -1,0 +1,103 @@
+$black: #222222;
+$green: #34f02c;
+$red: #ff6347;
+
+$colors: blue, green, yellow, red, purple;
+$active: #40a6ff, #80ff40, #ffec40, #ff5040, #af40ff;
+$inactive: #99cfff, #bbff99, #fff599, #ffa299, #d599ff;
+
+$height: 5rem;
+
+body {
+  font: 300 16px/1.5 "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+main {
+  margin: ($height / 2) auto;
+  width: $height * 5;
+}
+
+#captcha-container {
+  color: #232323;
+  width: $height * 5;
+  height: $height * 1.4;
+  img { pointer-events: none; }
+}
+
+#state-container,
+#image-container,
+#response-container,
+#helpers-container {
+  display: none;
+  &.show { display: block; }
+}
+
+#image-container,
+#response-container {
+  height: $height * 1;
+  font-size: 0;
+  text-align: center;
+}
+
+#helpers-container {
+  height: $height * 0.4;
+  p {
+    user-select: none;
+    display: block;
+    margin: 0 0.5rem;
+    float: left;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    &:last-child { float: right; }
+  }
+  #helper-actions {
+    cursor: pointer;
+    &:hover { font-weight: 600; }
+  }
+}
+
+#state-container {
+  height: $height * 1.4;
+  text-align: center;
+  cursor: pointer;
+  &.play {
+    background-color: $black;
+  }
+  &.success {
+    background-color: $green;
+  }
+  &.retry {
+    background-color: $red;
+  }
+  img {
+    margin-top: $height * 0.3;
+    height: $height * 0.8;
+    width: auto;
+  }
+}
+
+#image-viewer {
+  width: 100%;
+  height: auto;
+}
+
+.captcha-button {
+  display: inline-block;
+  cursor: pointer;
+  width: $height;
+  height: $height;
+  @for $n from 1 through 5 {
+    &##{nth($colors, $n)}-button {
+      opacity: 0.8;
+      background-color: nth($inactive, $n);
+      &:hover, &.active {
+        opacity: 1;
+        background-color: nth($active, $n);
+      }
+      &:active {
+        opacity: 0.7;
+      }
+    }
+  }
+}
