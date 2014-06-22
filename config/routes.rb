@@ -10,7 +10,7 @@ Twiggler::Application.routes.draw do
 
   post '/new_domain', to: 'domains#create'
 
-  post '/webhooks', to: 'webhooks#index'
+  post '/g0d8kskrjf', to: 'webhooks#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -15,7 +15,8 @@ class CaptchasController < ApplicationController
 	def get
 		begin
 		  Captcha.authenticate_public(params[:k])
-		  @captcha = JSON.parse(:sequence => LPOP gifs, :symbolize_keys => true)
+		  gif_sequence = LPOP gifs
+		  @captcha = JSON.parse(:sequence => gif_sequence, :symbolize_keys => true)
 			User.find_by(pub_key: params[:k]).captcha.new(sequence: @captcha[:sequence], image: @captcha[:image], read: false)
 			render :json => { id: @captcha.id, image: @captcha.image }, status: 200
 		rescue
