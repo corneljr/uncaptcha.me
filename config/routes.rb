@@ -1,7 +1,8 @@
 Twiggler::Application.routes.draw do
 
   resources :users
-  root 'test#index'
+  root 'home#intro'
+  get 'home/intro'
 
   get '/captcha/js', to: 'captcha#js'
   get '/captcha/css', to: 'captcha#css'
