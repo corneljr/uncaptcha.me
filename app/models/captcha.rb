@@ -1,6 +1,10 @@
 class Captcha < ActiveRecord::Base
 	belongs_to :user
 
+	def check(sequence)
+		self.sequence == sequence
+	end
+
 	def read?
 		read_attribute(:read)
 	end
@@ -10,13 +14,13 @@ class Captcha < ActiveRecord::Base
 		JSON.parse($redis.lpop($list), :symbolize_keys => true)
 	end
 
-	def self.authenticate_public(key)
+	def self.authenticate_public(key, url)
 		@user = User.find_by(pub_key: key)
-		@user && @user.domains.include?("requesting domain")
+		@user && @user.domains.find_by!(url: url.split(":").first)
 	end
 
-	def self.authenticate_private(key)
+	def self.authenticate_private(key, url)
 		@user = User.find_by(pub_key: key)
-		@user && @user.domains.include?("requesting domain")
+		@user && @user.domains.find_by!(url: url.split(":").first)
 	end
 end

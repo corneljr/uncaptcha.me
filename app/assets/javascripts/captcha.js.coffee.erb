@@ -98,6 +98,9 @@ view = {
       elements.helpersContainer.removeClass("show")
     state: ->
       elements.state.removeClass("show")
+      elements.state.removeClass("retry")
+      elements.state.removeClass("success")
+      elements.state.removeClass("start")
     respond: ->
       elements.response.removeClass("show")
   }
@@ -108,6 +111,7 @@ captcha = {}
 
 captcha.start = ->
   # Resetting state
+  data.captcha.sequence = []
   view.hide.captcha()
   view.hide.helpers()
   view.hide.respond()
@@ -135,7 +139,6 @@ captcha.logClicks = ->
   data.captcha.sequence.push(color)
   if data.captcha.sequence.length == 4
     data.captcha.sequence = data.captcha.sequence.join("")
-    console.log(data.captcha.sequence)
     captcha.query()
 
 captcha.watch = ->
@@ -164,12 +167,12 @@ captcha.get = (finish) ->
 
 captcha.check = (finish) ->
   http = new XMLHttpRequest()
-  http.open("POST", "/captcha/check", true)
+  http.open("POST", "/captcha/check?k=#{data.captcha.key}&id=#{data.captcha.id}&s=#{data.captcha.sequence}", true)
   http.onreadystatechange = ->
     if http.readyState == 4 && http.status == 200
       data.captcha.success = JSON.parse(http.responseText).success
       finish()
-  http.send("k=#{data.captcha.key}&s=#{data.captcha.sequence}")
+  http.send()
 
 
 initialize = ->

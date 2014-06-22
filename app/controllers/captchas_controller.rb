@@ -13,28 +13,33 @@ class CaptchasController < ApplicationController
 	end
 
 	def check
-		requested_captcha = Captcha.find(params[:id])
-		if Captcha.authenticate_public(params[:id]) && params[:s] == requested_captcha.sequence
+		@host = request.env['HTTP_HOST']
+		@captcha = Captcha.find(params[:id])
+		if Captcha.authenticate_public(params[:k], @host) && @captcha.check(params[:s])
+			@captcha.update(success: true)
 			render json: { success: true }, status: 200
 		else
+			@captcha.update(success: false)
 			render json: { success: false }, status: 200
 		end
 	end
 
 	def status
-		requested_captcha = Captcha.find(params[:id])
-		if Captcha.authenticate_private(params[:k]) && requested_captcha.read?
+		@host = request.env['HTTP_HOST']
+		@captcha = Captcha.find(params[:id])
+		if Captcha.authenticate_private(params[:k], @host) && @captcha.read?
 			render :json => { success: Captcha.find(params[:id]).success }, status: 200
 		else
 			render nothing: true, status: 420
 		end
-		requested_captcha.status = 'read'
+		@captcha.update(read: true)
 	end
 
 private
 
 	def authenticate
-		unless Captcha.authenticate_public(params[:k])
+		@host = request.env['HTTP_HOST']
+		unless Captcha.authenticate_public(params[:k], @host)
 			render nothing: true, status: 420
 		end
 	end
